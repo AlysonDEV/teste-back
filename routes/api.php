@@ -15,12 +15,12 @@ use App\Http\Controllers\PacienteController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::get('pacientes', [PacienteController::class, 'listar']);
-Route::post('paciente', [PacienteController::class, 'cadastrar']);
-Route::get('paciente', [PacienteController::class, 'dados']);
-Route::put('paciente', [PacienteController::class, 'atualizar']);
-Route::delete('paciente', [PacienteController::class, 'destroy']);
+Route::get('/pacientes', [PacienteController::class, 'listar']);
+Route::post('/paciente', [PacienteController::class, 'insert']);
+// Route::get('paciente', [PacienteController::class, 'dados']);
+// Route::put('paciente', [PacienteController::class, 'atualizar']);
+// Route::delete('paciente', [PacienteController::class, 'destroy']);

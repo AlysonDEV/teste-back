@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PacienteRequest;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 
 use App\Models\Paciente;
 
 
 class PacienteController extends Controller
 {
-    public function listar(){
+    public function listar()
+    {
         // $pacientes = Paciente::paginate(10);
         $pacientes = Paciente::all();
 
@@ -20,7 +21,7 @@ class PacienteController extends Controller
     public function cadastrar(PacienteRequest $request)
     {
         $data = $request->validated();
-        
+
 
         if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
             $file = $request->file('foto');
@@ -36,20 +37,21 @@ class PacienteController extends Controller
     }
 
 
-    public function insert(Request $req): RedirectResponse {
+    public function insert(Request $req)
+    {
 
         $paciente = new Paciente;
 
-        $paciente->nome = $req->nome;
-        $paciente->dt_nacimento = $req->dt_nacimento;
-        $paciente->cpf = $req->cpf;
-        $paciente->telefone = $req->telefone;
-        $paciente->foto = $req->foto;
+        $paciente->nome = $req->name;
+        $paciente->dt_nascimento = "1988-01-19";
+        $paciente->cpf = "02751811388";
+        $paciente->telefone = "85992188113";
+        $paciente->foto = "nulo";
 
-        $paciente-save();
+        $paciente->save();
 
 
-        return redirect('/listar');
-
+        // return redirect('/listar');return response()->json($paciente, 201);
+        return response()->json($req["nome"], 201);
     }
 }
