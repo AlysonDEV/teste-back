@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string("nome");
             $table->date("dt_nascimento");
-            $table->string("cpf");
+            $table->string("cpf")->unique();
             $table->string("foto");
             $table->softDeletes();
         });
@@ -29,5 +29,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('pacientes');
     }
-
 };
