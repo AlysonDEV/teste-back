@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("nome");
             $table->date("dt_nascimento");
             $table->string("cpf")->unique();
+            $table->string('telefone');
             $table->string("foto");
             $table->softDeletes();
         });
