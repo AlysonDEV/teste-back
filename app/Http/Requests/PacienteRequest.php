@@ -31,9 +31,9 @@ class PacienteRequest extends FormRequest
         return [
             'nome_completo' => 'required|string|max:255',
             'data_nascimento' => 'required|date_format:Y-m-d',
-            'cpf' => ['required', 'string', 'max:14', 'min:11', $cpfRule, 'regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/'],
+            'cpf' => ['required', 'string', 'max:11', 'min:11', $cpfRule, 'regex:/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/'],
             'telefone' => ['required', 'string', 'max:15', 'regex:/^\(\d{2}\) \d{5}\-\d{4}$/'],
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ];
     }
 }
