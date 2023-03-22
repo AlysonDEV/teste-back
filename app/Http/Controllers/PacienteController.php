@@ -22,6 +22,8 @@ use App\Models\Paciente;
 class PacienteController extends Controller
 {
 
+    // Método no PacienteController para listar pacientes ativos
+
     public function insert(Request $req)
     {
         try {
@@ -95,7 +97,9 @@ class PacienteController extends Controller
         }
     }
 
-    public function listar()
+    // Método no PacienteController para listar pacientes ativos
+
+    public function listActive()
     {
         // $pacientes = Paciente::paginate(10);
         $pacientes = Paciente::all();
@@ -103,13 +107,17 @@ class PacienteController extends Controller
         return response()->json($pacientes);
     }
 
-    public function listarExcluidos()
+    // Método no PacienteController para listar pacientes excluidos
+
+    public function listDeleted()
     {
         $pacientes = Paciente::onlyTrashed()->get();
         return response()->json($pacientes);
     }
 
-    public function deletar($id)
+    // Método no PacienteController para deletar um paciente pelo ID 
+
+    public function delete($id)
     {
         $paciente = Paciente::find($id);
 
@@ -118,6 +126,44 @@ class PacienteController extends Controller
             return response()->json(['message' => 'Paciente deletado com sucesso!']);
         } else {
             return response()->json(['error' => 'Paciente não encontrado.'], 404);
+        }
+    }
+
+    // Método no PacienteController para restaurar um paciente excluído pelo ID
+
+    public function restoreById($id)
+    {
+        try {
+            // Busca o paciente excluído pelo ID
+            $paciente = Paciente::onlyTrashed()->findOrFail($id);
+
+            // Restaura o registro do paciente
+            $paciente->restore();
+
+            // Retorna a mensagem de sucesso
+            return response()->json(['message' => 'Paciente restaurado com sucesso.'], 200);
+        } catch (\Exception $e) {
+            // Retorna uma mensagem de erro em caso de falha
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    // Método no PacienteController para restaurar um paciente excluído pelo CPF
+
+    public function restoreByCpf($cpf)
+    {
+        try {
+            // Busca o paciente excluído pelo CPF
+            $paciente = Paciente::onlyTrashed()->where('cpf', $cpf)->firstOrFail();
+
+            // Restaura o registro do paciente
+            $paciente->restore();
+
+            // Retorna a mensagem de sucesso
+            return response()->json(['message' => 'Paciente restaurado com sucesso.'], 200);
+        } catch (\Exception $e) {
+            // Retorna uma mensagem de erro em caso de falha
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 }

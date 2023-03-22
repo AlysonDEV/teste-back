@@ -19,11 +19,10 @@ use App\Http\Controllers\PacienteController;
 //     return $request->user();
 // });
 
+// Rotas do PacienteController
 Route::post('/paciente', [PacienteController::class, 'insert']);
-Route::get('/pacientes', [PacienteController::class, 'listar']);
-Route::get('/pacientes/excluidos', [PacienteController::class, 'listarExcluidos']);
-Route::delete('/paciente/{id}', [PacienteController::class, 'deletar']);
-
-// Route::get('paciente', [PacienteController::class, 'dados']);
-// Route::put('paciente', [PacienteController::class, 'atualizar']);
-// Route::delete('paciente', [PacienteController::class, 'destroy']);
+Route::get('/pacientes', [PacienteController::class, 'listActive']);
+Route::get('/pacientes/excluidos', [PacienteController::class, 'listDeleted']);
+Route::delete('/paciente/{id}', [PacienteController::class, 'delete']);
+Route::put('/pacientes/{id}/restaurar', [PacienteController::class, 'restoreById']);
+Route::put('/pacientes/cpf/{cpf}/restaurar', [PacienteController::class, 'restoreByCpf']);
