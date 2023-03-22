@@ -21,13 +21,6 @@ use App\Models\Paciente;
 
 class PacienteController extends Controller
 {
-    public function listar()
-    {
-        // $pacientes = Paciente::paginate(10);
-        $pacientes = Paciente::all();
-
-        return response()->json($pacientes);
-    }
 
     public function insert(Request $req)
     {
@@ -99,6 +92,32 @@ class PacienteController extends Controller
             return response()->json($paciente, 201);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function listar()
+    {
+        // $pacientes = Paciente::paginate(10);
+        $pacientes = Paciente::all();
+
+        return response()->json($pacientes);
+    }
+
+    public function listarExcluidos()
+    {
+        $pacientes = Paciente::onlyTrashed()->get();
+        return response()->json($pacientes);
+    }
+
+    public function deletar($id)
+    {
+        $paciente = Paciente::find($id);
+
+        if ($paciente) {
+            $paciente->delete();
+            return response()->json(['message' => 'Paciente deletado com sucesso!']);
+        } else {
+            return response()->json(['error' => 'Paciente não encontrado.'], 404);
         }
     }
 }
