@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "colName": "Multintegrada",
+    "created": "2023-03-30T00:17:32.848Z",
+    "sortNum": 20000,
+    "folders": [
+      {
+        "_id": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+        "name": "Paciente",
+        "containerId": "",
+        "created": "2023-03-30T00:17:32.871Z",
+        "sortNum": 10000
+      }
+    ]
+  }
+]
