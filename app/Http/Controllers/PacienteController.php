@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 use App\Http\Requests\PacienteRequest;
+use App\Models\PacienteAtendimento;
 
 
 use App\Models\Paciente;
@@ -17,6 +18,8 @@ use App\Models\Paciente;
 
 class PacienteController extends Controller
 {
+
+
     public function listar()
     {
         // $pacientes = Paciente::paginate(10);
@@ -66,6 +69,11 @@ class PacienteController extends Controller
 
 
             $paciente->save();
+
+            PacienteAtendimento::create([
+                'paciente_id' => $paciente->id,
+            ]);
+
 
             return response()->json($paciente, 201);
         } catch (\Exception $e) {
