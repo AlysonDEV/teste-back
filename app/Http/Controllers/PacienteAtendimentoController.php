@@ -10,9 +10,12 @@ class PacienteAtendimentoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($page = 1, $limitPerPage = 10)
     {
         //
+        $atendimentos = PacienteAtendimento::paginate($limitPerPage, ['*'], 'page', $page);
+
+        return response()->json($atendimentos);
     }
 
     /**
