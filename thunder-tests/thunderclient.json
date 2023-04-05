@@ -164,5 +164,30 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "aaa0eb11-9ec0-4dcd-bd62-740d12e3aa7a",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "6d2c12e8-e870-45cc-89de-d95e59b89f53",
+    "name": "Listar",
+    "url": "{{base_url}}atendimentos?page=2&limitPerPage=120",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-04-05T22:49:27.173Z",
+    "modified": "2023-04-05T23:02:51.616Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "page",
+        "value": "2",
+        "isPath": false
+      },
+      {
+        "name": "limitPerPage",
+        "value": "120",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
