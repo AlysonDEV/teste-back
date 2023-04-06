@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-30T00:17:32.874Z",
-    "modified": "2023-03-30T00:39:02.387Z",
+    "modified": "2023-04-06T02:58:27.013Z",
     "headers": [
       {
         "name": "Accept",
@@ -30,7 +30,7 @@
         },
         {
           "name": "cpf",
-          "value": "02751811384"
+          "value": "02751811388"
         },
         {
           "name": "telefone",
@@ -51,25 +51,25 @@
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "BuscarPorID",
-    "url": "{{ _.base_url }}paciente/98be9275-4b1d-44a0-8837-595071617f94",
+    "url": "{{base_url}}paciente/98be9275-4b1d-44a0-8837-595071617f94",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-03-30T00:17:32.875Z",
-    "modified": "2023-03-30T00:17:32.875Z",
+    "modified": "2023-03-30T00:53:11.659Z",
     "headers": [],
     "params": [],
-    "docs": ""
+    "tests": []
   },
   {
     "_id": "c07605e7-3ea8-42d8-8890-c862cecf0a35",
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "BuscarPorCPF",
-    "url": "{{ _.base_url }}paciente/cpf/02751811388",
+    "url": "{{base_url}}paciente/cpf/02751811388",
     "method": "GET",
     "sortNum": 30000,
     "created": "2023-03-30T00:17:32.876Z",
-    "modified": "2023-03-30T00:19:43.789Z",
+    "modified": "2023-03-30T00:53:22.386Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -114,60 +114,82 @@
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "Deletar",
-    "url": "{{ _.base_url }}paciente/98be9275-4b1d-44a0-8837-595071617f94",
+    "url": "{{base_url}}paciente/98be9275-4b1d-44a0-8837-595071617f94",
     "method": "DELETE",
     "sortNum": 60000,
     "created": "2023-03-30T00:17:32.880Z",
-    "modified": "2023-03-30T00:17:32.880Z",
-    "headers": [
-      {
-        "name": "",
-        "value": ""
-      }
-    ],
+    "modified": "2023-03-30T00:52:46.322Z",
+    "headers": [],
     "params": [],
-    "docs": ""
+    "tests": []
   },
   {
     "_id": "e675bb63-216c-4cb0-89f1-c4f4d4be7ec9",
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "RecuperarPacientePorID",
-    "url": "{{ _.base_url }}pacientes/98be9275-4b1d-44a0-8837-595071617f94/restaurar",
+    "url": "{{base_url}}pacientes/98be9275-4b1d-44a0-8837-595071617f94/restaurar",
     "method": "PUT",
     "sortNum": 70000,
     "created": "2023-03-30T00:17:32.881Z",
-    "modified": "2023-03-30T00:17:32.881Z",
+    "modified": "2023-03-30T00:52:52.613Z",
     "headers": [],
     "params": [],
-    "docs": ""
+    "tests": []
   },
   {
     "_id": "37791a86-ff2a-4e25-8783-8180f7a09f73",
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "RecuperarPacientePorCPF",
-    "url": "{{ _.base_url }}pacientes/cpf/02751811389/restaurar",
+    "url": "{{base_url}}pacientes/cpf/02751811389/restaurar",
     "method": "PUT",
     "sortNum": 80000,
     "created": "2023-03-30T00:17:32.882Z",
-    "modified": "2023-03-30T00:17:32.882Z",
+    "modified": "2023-03-30T00:52:57.949Z",
     "headers": [],
     "params": [],
-    "docs": ""
+    "tests": []
   },
   {
     "_id": "96a754b9-1412-4e34-8443-5e4cdd072a84",
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "Destruir",
-    "url": "{{ _.base_url }}paciente/98be8e81-dc73-4b19-9075-62a725cd1d1c/destruir",
+    "url": "{{base_url}}paciente/98dd021d-b892-4fa5-bf53-35892f6ed7ba/destruir",
     "method": "DELETE",
     "sortNum": 90000,
     "created": "2023-03-30T00:17:32.883Z",
-    "modified": "2023-03-30T00:17:32.883Z",
+    "modified": "2023-04-06T02:59:29.436Z",
     "headers": [],
     "params": [],
-    "docs": ""
+    "tests": []
+  },
+  {
+    "_id": "aaa0eb11-9ec0-4dcd-bd62-740d12e3aa7a",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "6d2c12e8-e870-45cc-89de-d95e59b89f53",
+    "name": "ListarAtendimentos",
+    "url": "{{base_url}}atendimentos",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-04-05T22:49:27.173Z",
+    "modified": "2023-04-06T03:06:09.863Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "page",
+        "value": "1",
+        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "limitPerPage",
+        "value": "",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
