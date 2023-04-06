@@ -11,4 +11,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Paciente extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
+
+
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    public function atendimentos()
+    {
+        return $this->hasMany(PacienteAtendimento::class, 'paciente_id');
+    }
 }
