@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->uuid("id")->primary('id');
+            $table->uuid("id");
             $table->timestamps();
             $table->string("nome");
             $table->date("dt_nascimento");
-            $table->string("cpf")->unique();
-            $table->string('telefone');
+            $table->string("cpf");
             $table->string("foto");
             $table->softDeletes();
         });
@@ -30,4 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('pacientes');
     }
+
 };
