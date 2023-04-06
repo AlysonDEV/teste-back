@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\PacienteAtendimentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,10 @@ Route::put('/paciente/cpf/{cpf}/restaurar', [PacienteController::class, 'restore
 // restoreByCpf
 Route::delete('/paciente/{id}/destruir', [PacienteController::class, 'destroy']);
 // Route::delete('/paciente/{id}', [PacienteController::class, 'delete']);
+
+
+// Rotas para atendimentos
+Route::get('/atendimentos/{page?}/{limitPerPage?}', [PacienteAtendimentoController::class, 'index']);
+
+Route::post('/paciente/{paciente_id}/atendimento', [PacienteAtendimentoController::class, 'store']);
+Route::put('/pacientes/{id}/atendimentos/{atendimento}', [PacienteAtendimentoController::class, 'update']);
