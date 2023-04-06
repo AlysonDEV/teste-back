@@ -16,8 +16,7 @@ use Brazanation\Documents\Exception\InvalidDocument as  InvalidDocumentException
 
 
 use App\Models\Paciente;
-
-
+use App\Models\PacienteAtendimento;
 
 class PacienteController extends Controller
 {
@@ -80,6 +79,23 @@ class PacienteController extends Controller
 
 
             $paciente->save();
+
+            // Lançar o paciente na tabela atendimento
+
+            $atendimento = new PacienteAtendimento;
+            $atendimento->paciente_id = $paciente->id;
+            $atendimento->t = 0;
+            $atendimento->pas = 0;
+            $atendimento->pad = 0;
+            $atendimento->fc = 0;
+            $atendimento->fr = 0;
+
+            $atendimento->save();
+
+
+
+
+
 
             return response()->json($paciente, 201);
         } catch (\Exception $e) {

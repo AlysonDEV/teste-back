@@ -40,3 +40,6 @@ Route::delete('/paciente/{id}/destruir', [PacienteController::class, 'destroy'])
 
 // Rotas para atendimentos
 Route::get('/atendimentos/{page?}/{limitPerPage?}', [PacienteAtendimentoController::class, 'index']);
+
+Route::post('/paciente/{paciente_id}/atendimento', [PacienteAtendimentoController::class, 'store']);
+Route::put('/pacientes/{id}/atendimentos/{atendimento}', [PacienteAtendimentoController::class, 'update']);
