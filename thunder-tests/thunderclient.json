@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-30T00:17:32.874Z",
-    "modified": "2023-03-30T00:39:02.387Z",
+    "modified": "2023-04-06T02:58:27.013Z",
     "headers": [
       {
         "name": "Accept",
@@ -30,7 +30,7 @@
         },
         {
           "name": "cpf",
-          "value": "02751811384"
+          "value": "02751811388"
         },
         {
           "name": "telefone",
@@ -156,13 +156,40 @@
     "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
     "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
     "name": "Destruir",
-    "url": "{{base_url}}paciente/98be8e81-dc73-4b19-9075-62a725cd1d1c/destruir",
+    "url": "{{base_url}}paciente/98dd021d-b892-4fa5-bf53-35892f6ed7ba/destruir",
     "method": "DELETE",
     "sortNum": 90000,
     "created": "2023-03-30T00:17:32.883Z",
-    "modified": "2023-03-30T00:53:50.683Z",
+    "modified": "2023-04-06T02:59:29.436Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "aaa0eb11-9ec0-4dcd-bd62-740d12e3aa7a",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "6d2c12e8-e870-45cc-89de-d95e59b89f53",
+    "name": "ListarAtendimentos",
+    "url": "{{base_url}}atendimentos",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-04-05T22:49:27.173Z",
+    "modified": "2023-04-06T03:06:09.863Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "page",
+        "value": "1",
+        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "limitPerPage",
+        "value": "",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]
