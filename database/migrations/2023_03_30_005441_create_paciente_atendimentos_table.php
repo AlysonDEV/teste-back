@@ -36,6 +36,7 @@ return new class extends Migration
             $table->boolean('falta_olfato')->default(false);
             $table->boolean('dificuldade_locomocao')->default(false);
             $table->boolean('diarreia')->default(false);
+            $table->softDeletes();
 
             $table->foreign('paciente_id')
                 ->references('id')
