@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "84a77a74-26ea-4a02-a293-4ce6019c740a",
+    "name": "env",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-03-30T00:18:55.706Z",
+    "modified": "2023-03-30T00:18:55.706Z",
+    "data": [
+      {
+        "name": "base_url",
+        "value": "http://localhost/api/"
+      }
+    ]
+  }
+]

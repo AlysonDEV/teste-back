@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\PacienteAtendimentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,26 @@ use App\Http\Controllers\PacienteController;
 //     return $request->user();
 // });
 
-Route::get('/pacientes', [PacienteController::class, 'listar']);
+// Rotas do PacienteController
 Route::post('/paciente', [PacienteController::class, 'insert']);
-// Route::get('paciente', [PacienteController::class, 'dados']);
-// Route::put('paciente', [PacienteController::class, 'atualizar']);
-// Route::delete('paciente', [PacienteController::class, 'destroy']);
+
+Route::get('/paciente/{id}', [PacienteController::class, 'getByID']);
+Route::get('/paciente/cpf/{cpf}', [PacienteController::class, 'getByCPF']);
+
+Route::get('/pacientes/excluidos', [PacienteController::class, 'listDeleted']);
+Route::get('/pacientes', [PacienteController::class, 'listActive']);
+
+Route::delete('/paciente/{id}', [PacienteController::class, 'delete']);
+Route::put('/paciente/{id}/restaurar', [PacienteController::class, 'restoreById']);
+Route::put('/paciente/cpf/{cpf}/restaurar', [PacienteController::class, 'restoreById']);
+
+// restoreByCpf
+Route::delete('/paciente/{id}/destruir', [PacienteController::class, 'destroy']);
+// Route::delete('/paciente/{id}', [PacienteController::class, 'delete']);
+
+
+// Rotas para atendimentos
+Route::get('/atendimentos/{page?}/{limitPerPage?}', [PacienteAtendimentoController::class, 'index']);
+
+Route::post('/paciente/{paciente_id}/atendimento', [PacienteAtendimentoController::class, 'store']);
+Route::put('/pacientes/{id}/atendimentos/{atendimento}', [PacienteAtendimentoController::class, 'update']);

@@ -1,0 +1,195 @@
+[
+  {
+    "_id": "4213dbef-945c-4cba-b51e-83fe015ed551",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "Cadastrar",
+    "url": "{{base_url}}paciente",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-03-30T00:17:32.874Z",
+    "modified": "2023-04-06T02:58:27.013Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "nome",
+          "value": "Alyson"
+        },
+        {
+          "name": "dt_nascimento",
+          "value": "1988-01-29"
+        },
+        {
+          "name": "cpf",
+          "value": "02751811388"
+        },
+        {
+          "name": "telefone",
+          "value": "85992188113"
+        }
+      ],
+      "files": [
+        {
+          "name": "foto",
+          "value": "../../../../Imagens/1517841357293.webp"
+        }
+      ]
+    },
+    "tests": []
+  },
+  {
+    "_id": "78218890-b38f-40cc-b474-2651446fad91",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "BuscarPorID",
+    "url": "{{base_url}}paciente/98be9275-4b1d-44a0-8837-595071617f94",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-03-30T00:17:32.875Z",
+    "modified": "2023-03-30T00:53:11.659Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c07605e7-3ea8-42d8-8890-c862cecf0a35",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "BuscarPorCPF",
+    "url": "{{base_url}}paciente/cpf/02751811388",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-03-30T00:17:32.876Z",
+    "modified": "2023-03-30T00:53:22.386Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e14c0871-c967-499d-896b-f6cfb8b83a4a",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "Listar",
+    "url": "{{base_url}}pacientes",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-03-30T00:17:32.877Z",
+    "modified": "2023-03-30T00:24:51.894Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "orderby",
+        "value": "created_at",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "292a4bf3-dc2a-48cc-b403-888838885b5e",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "ListarExcluidos",
+    "url": "{{base_url}}pacientes/excluidos",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2023-03-30T00:17:32.879Z",
+    "modified": "2023-03-30T00:37:16.047Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cf2957ef-fbde-48ae-9e58-26fb2d3f3d02",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "Deletar",
+    "url": "{{base_url}}paciente/98be9275-4b1d-44a0-8837-595071617f94",
+    "method": "DELETE",
+    "sortNum": 60000,
+    "created": "2023-03-30T00:17:32.880Z",
+    "modified": "2023-03-30T00:52:46.322Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e675bb63-216c-4cb0-89f1-c4f4d4be7ec9",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "RecuperarPacientePorID",
+    "url": "{{base_url}}pacientes/98be9275-4b1d-44a0-8837-595071617f94/restaurar",
+    "method": "PUT",
+    "sortNum": 70000,
+    "created": "2023-03-30T00:17:32.881Z",
+    "modified": "2023-03-30T00:52:52.613Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "37791a86-ff2a-4e25-8783-8180f7a09f73",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "RecuperarPacientePorCPF",
+    "url": "{{base_url}}pacientes/cpf/02751811389/restaurar",
+    "method": "PUT",
+    "sortNum": 80000,
+    "created": "2023-03-30T00:17:32.882Z",
+    "modified": "2023-03-30T00:52:57.949Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "96a754b9-1412-4e34-8443-5e4cdd072a84",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "9c298712-c2ac-4999-841f-f7aa918c36b2",
+    "name": "Destruir",
+    "url": "{{base_url}}paciente/98dd021d-b892-4fa5-bf53-35892f6ed7ba/destruir",
+    "method": "DELETE",
+    "sortNum": 90000,
+    "created": "2023-03-30T00:17:32.883Z",
+    "modified": "2023-04-06T02:59:29.436Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "aaa0eb11-9ec0-4dcd-bd62-740d12e3aa7a",
+    "colId": "c5cc8f56-782a-4193-bcfe-ce36c1e1db77",
+    "containerId": "6d2c12e8-e870-45cc-89de-d95e59b89f53",
+    "name": "ListarAtendimentos",
+    "url": "{{base_url}}atendimentos",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-04-05T22:49:27.173Z",
+    "modified": "2023-04-06T03:06:09.863Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "page",
+        "value": "1",
+        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "limitPerPage",
+        "value": "",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  }
+]
